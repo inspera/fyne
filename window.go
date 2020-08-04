@@ -67,6 +67,9 @@ type Window interface {
 	// SetCloseIntercept sets a function that runs instead of closing if defined
 	SetCloseIntercept(func())
 
+	// ViewportIsReady checks if glwf viewport object has been created
+	ViewportIsReady() bool
+
 	// Show the window on screen.
 	Show()
 	// Hide the window from the user.

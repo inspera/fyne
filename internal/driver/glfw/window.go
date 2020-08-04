@@ -1247,6 +1247,10 @@ func (w *window) view() *glfw.Window {
 	return w.viewport
 }
 
+func (w *window) ViewportIsReady() bool {
+	return w.view() != nil
+}
+
 func (d *gLDriver) CreateSplashWindow() fyne.Window {
 	win := d.createWindow("", false)
 	win.SetPadded(false)

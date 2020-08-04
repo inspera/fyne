@@ -97,6 +97,10 @@ func (w *window) SetCloseIntercept(callback func()) {
 	w.onCloseIntercepted = callback
 }
 
+func (w *window) ViewportIsReady() bool {
+	return true
+}
+
 func (w *window) Show() {
 	menu := fyne.CurrentApp().Driver().(*mobileDriver).findMenu(w)
 	menuButton := widget.NewButtonWithIcon("", theme.MenuIcon(), func() {

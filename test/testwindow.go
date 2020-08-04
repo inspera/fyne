@@ -9,6 +9,7 @@ type testWindow struct {
 	fullScreen         bool
 	fixedSize          bool
 	focused            bool
+	viewportIsReady    bool
 	onClosed           func()
 	onCloseIntercepted func()
 
@@ -115,6 +116,10 @@ func (w *testWindow) SetOnClosed(closed func()) {
 
 func (w *testWindow) SetCloseIntercept(callback func()) {
 	w.onCloseIntercepted = callback
+}
+
+func (w *testWindow) ViewportIsReady() bool {
+	return w.viewportIsReady
 }
 
 func (w *testWindow) SetPadded(padded bool) {
